@@ -8,9 +8,14 @@
 
 Player::Player(string name){
     this->name = name;
+
 }
 
-int Player::stacksize() {}
+int Player::stacksize() {
+    return -1;
+}
 
-int Player::cardesTaken() {}
+int Player::cardesTaken() {
+    return -1;
+}
 

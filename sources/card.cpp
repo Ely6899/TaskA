@@ -6,7 +6,8 @@
 
 using namespace std;
 
-Card::Card(int cardValue, string type) {
+Card::Card(unsigned int cardValue, string type) {
     this->cardValue = cardValue;
     this->type = type;
+
 }

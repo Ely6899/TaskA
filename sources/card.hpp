@@ -14,11 +14,11 @@ using namespace std;
 }*/
 
 class Card {
-    int cardValue;
+    unsigned int cardValue;
     string type;
 
 public:
-    Card(int cardValue, string type);
+    Card(unsigned int cardValue, string type);
 
 };
 

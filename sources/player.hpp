@@ -7,6 +7,8 @@
 
 #include <string>
 
+
+
 namespace ariel{
     //class Player;
 }
@@ -20,6 +22,10 @@ public:
     Player(string name); //Player constructor.
     int stacksize();
     int cardesTaken();
+
+    string getName(){ //inline declaration
+        return this->name;
+    }
 
 };
 

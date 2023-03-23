@@ -6,6 +6,7 @@
 #define CARDWAR_A_GAME_HPP
 
 #include "player.hpp"
+#include "card.hpp"
 
 
 using namespace std;
@@ -16,7 +17,7 @@ class Game {
     int player1Wins = 0;
     int player2Wins = 0;
     int draws = 0;
-
+    string currRoundStats = "";
 
 public:
     Game(Player player1, Player player2); //Constructor

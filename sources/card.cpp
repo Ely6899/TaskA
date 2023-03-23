@@ -32,6 +32,10 @@ string Card::getType() {
     return "Card type";
 }
 
+void Card::setCardValue(unsigned int cardValue){}
+
+void Card::setType(string type){}
+
 string Card::to_string(){
     return "to_string";
 }

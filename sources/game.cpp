@@ -6,7 +6,6 @@
 
 #include "game.hpp"
 
-
 Game::Game(Player player1, Player player2) : player1(player1), player2(player2){
     //std::cout << "Created game with players " << player1.getName() << " and " << player2.getName() << std::endl;
 }

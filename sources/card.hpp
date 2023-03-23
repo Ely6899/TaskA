@@ -15,11 +15,16 @@ class Card {
     string type;
 
 public:
+    Card(){};
     Card(unsigned int cardValue, string type); //Constructor
     ~Card(); //Destructor
 
     unsigned int getCardValue();
     string getType();
+
+    void setCardValue(unsigned int cardValue);
+    void setType(string type);
+
     string to_string();
 
 };

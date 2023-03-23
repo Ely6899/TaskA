@@ -9,7 +9,7 @@
 
 using namespace std;
 
-Card::Card(unsigned int cardValue, string type) {
+Card::Card(int cardValue, string type) {
 /*
     if(cardValue < 1 || cardValue > 14)
         throw string("Invalid card value generated!");
@@ -20,22 +20,21 @@ Card::Card(unsigned int cardValue, string type) {
     this->cardValue = cardValue;
     this->type = type;
 */
-
 }
 Card::~Card() {}
 
-unsigned int Card::getCardValue() {
+int Card::getCardValue() {
     return 1;
 }
 
 string Card::getType() {
-    return "Card type";
+    return "type";
 }
 
-void Card::setCardValue(unsigned int cardValue){}
+void Card::setCardValue(int cardValue){}
 
 void Card::setType(string type){}
 
 string Card::to_string(){
-    return "to_string";
+    return "";
 }

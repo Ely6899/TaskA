@@ -17,7 +17,7 @@ class Game {
     int player1Wins = 0;
     int player2Wins = 0;
     int draws = 0;
-    string currRoundStats = "";
+    string currRoundStats;
 
 public:
     Game(Player player1, Player player2); //Constructor

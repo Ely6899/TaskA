@@ -18,7 +18,6 @@ class Player {
     string name;
 
     int deckTop = 0;
-    int cardsLeft = 26;
     int cardsTaken = 0;
 
 
@@ -29,7 +28,6 @@ public:
     int stacksize(); //Returns cardsLeft - deckTop index.
     int cardesTaken(); //Retuns cardsTaken field.
     string getName();
-    Card getDeckTop(); //Gets the element initDeck[deckTop]
 };
 
 

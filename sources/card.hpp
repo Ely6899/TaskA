@@ -11,18 +11,18 @@ using namespace std;
 
 
 class Card {
-    unsigned int cardValue;
+    int cardValue;
     string type;
 
 public:
-    Card(){};
-    Card(unsigned int cardValue, string type); //Constructor
+    Card();
+    Card(int cardValue, string type); //Constructor
     ~Card(); //Destructor
 
-    unsigned int getCardValue();
+    int getCardValue();
     string getType();
 
-    void setCardValue(unsigned int cardValue);
+    void setCardValue(int cardValue);
     void setType(string type);
 
     string to_string();

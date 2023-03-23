@@ -21,6 +21,6 @@ int Player::cardesTaken() {
 }
 
 string Player::getName() {
-    return this->name;
+    return "";
 }
 

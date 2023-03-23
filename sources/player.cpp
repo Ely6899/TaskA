@@ -7,9 +7,10 @@
 #include "player.hpp"
 
 Player::Player(string name){
-    this->name = name;
+    //this->name = name;
 
 }
+Player::~Player() {}
 
 int Player::stacksize() {
     return -1;
@@ -17,5 +18,9 @@ int Player::stacksize() {
 
 int Player::cardesTaken() {
     return -1;
+}
+
+string Player::getName() {
+    return this->name;
 }
 

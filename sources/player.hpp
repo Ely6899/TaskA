@@ -8,24 +8,20 @@
 #include <string>
 
 
-
-namespace ariel{
-    //class Player;
-}
+namespace ariel{}
 
 using namespace std;
 
+
 class Player {
     string name;
-
 public:
-    Player(string name); //Player constructor.
+    Player(string name); //Constructor
+    ~Player(); //Destructor
+
     int stacksize();
     int cardesTaken();
-
-    string getName(){ //inline declaration
-        return this->name;
-    }
+    string getName();
 
 };
 

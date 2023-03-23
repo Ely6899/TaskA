@@ -9,16 +9,18 @@
 
 using namespace std;
 
-/*namespace ariel{
-    class Card;
-}*/
 
 class Card {
     unsigned int cardValue;
     string type;
 
 public:
-    Card(unsigned int cardValue, string type);
+    Card(unsigned int cardValue, string type); //Constructor
+    ~Card(); //Destructor
+
+    unsigned int getCardValue();
+    string getType();
+    string to_string();
 
 };
 

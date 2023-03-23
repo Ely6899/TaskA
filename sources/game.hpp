@@ -7,17 +7,21 @@
 
 #include "player.hpp"
 
-/*namespace ariel{
-    //class Game;
-}*/
 
 using namespace std;
 
 class Game {
     Player player1, player2; //The 2 players of the game.
+    int turnCount = 0; //Number of turns which happened in the game.
+    int player1Wins = 0;
+    int player2Wins = 0;
+    int draws = 0;
+
 
 public:
-    Game(Player player1, Player player2);
+    Game(Player player1, Player player2); //Constructor
+    ~Game(); //Destructor
+
     void playTurn();
     void printLastTurn();
     void playAll();

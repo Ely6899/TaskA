@@ -17,7 +17,6 @@ class Card {
 public:
     Card();
     Card(int cardValue, string type); //Constructor
-    ~Card(); //Destructor
 
     int getCardValue();
     string getType();

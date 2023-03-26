@@ -21,7 +21,6 @@ Card::Card(int cardValue, string type) {
     this->type = type;
 */
 }
-Card::~Card() {}
 
 int Card::getCardValue() {
     return 1;

@@ -22,7 +22,6 @@ class Game {
 
 public:
     Game(Player player1, Player player2); //Constructor
-    ~Game(); //Destructor
 
     void playTurn();
     void printLastTurn();

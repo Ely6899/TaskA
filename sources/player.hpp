@@ -17,13 +17,8 @@ using namespace std;
 class Player {
     string name;
 
-    int deckTop = 0;
-    int cardsTaken = 0;
-
-
 public:
     Player(string name); //Constructor
-    ~Player(); //Destructor
 
     int stacksize(); //Returns cardsLeft - deckTop index.
     int cardesTaken(); //Retuns cardsTaken field.

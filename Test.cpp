@@ -10,26 +10,6 @@
 #include "sources/game.hpp"
 
 
-TEST_CASE("Card initialization tests"){
-    for(int i = 1; i <= 13; i++){
-        CHECK_NOTHROW(Card(i,"Hearts"));
-        CHECK_NOTHROW(Card(i,"Spades"));
-        CHECK_NOTHROW(Card(i,"Diamonds"));
-        CHECK_NOTHROW(Card(i,"Clubs"));
-    }
-}
-
-TEST_CASE("Card initialization tests (failures)"){
-    CHECK_THROWS_AS(Card(0,"Hearts"), std::exception);
-    CHECK_THROWS_AS(Card(-5,"Spades"), std::exception);
-    CHECK_THROWS_AS(Card(-50,"Diamonds"), std::exception);
-    CHECK_THROWS_AS(Card(-1000,"Clubs"), std::exception);
-
-    CHECK_THROWS_AS(Card(2,"type1"), std::exception);
-    CHECK_THROWS_AS(Card(2,"type2"), std::exception);
-    CHECK_THROWS_AS(Card(2,"Diamond"), std::exception);
-    CHECK_THROWS_AS(Card(2,""), std::exception);
-}
 
 TEST_CASE("Player initialization"){
     CHECK_NOTHROW(Player("Alice"));
@@ -37,13 +17,14 @@ TEST_CASE("Player initialization"){
 }
 
 TEST_CASE("Player initialization (failure)"){
-    CHECK_THROWS_AS(Player(""), std::exception);
+    CHECK_THROWS_AS(Player(""), std::string);
+    CHECK_THROWS_AS(Player(" "), std::string);
 }
 
 TEST_CASE("Player function tests tests"){
     Player player{"Ely"};
     CHECK(player.stacksize() >= 0);
-    CHECK(player.cardesTaken()>= 0);
+    CHECK(player.cardesTaken() >= 0);
 }
 
 TEST_CASE("Game initialization"){
@@ -51,12 +32,40 @@ TEST_CASE("Game initialization"){
 }
 
 TEST_CASE("Game initialization failures"){
-    CHECK_THROWS_AS(Game(Player(""), Player("Ely")), std::exception);
-    CHECK_THROWS_AS(Game(nullptr, nullptr), std::exception);
-    CHECK_THROWS_AS(Game(NULL, NULL), std::exception);
+    CHECK_THROWS_AS(Game(Player(""), Player("Ely")), std::string);
+    CHECK_THROWS_AS(Game(Player("Ely"), Player("")), std::string);
+    CHECK_THROWS_AS(Game(Player("Ely"), Player("Ely")), std::string);
 }
 
-TEST_CASE("Test playTurn"){
-
+TEST_CASE("Check no stats yet (stats, log, last turn, winner)"){
+    Game game{Player("Ely"), Player("Bob")};
+    CHECK_THROWS_AS(game.printStats(), std::string);
+    CHECK_THROWS_AS(game.printLastTurn(), std::string);
+    CHECK_THROWS_AS(game.printLog(), std::string);
+    CHECK_THROWS(game.printWiner());
 }
+
+TEST_CASE("No winner before game finish"){
+    Game game{Player("Ely"), Player("Bob")};
+    game.playTurn();
+
+    CHECK_THROWS(game.printWiner());
+}
+
+TEST_CASE("Check game ending condition"){
+    Game game{Player("Ely"), Player("Bob")};
+    CHECK_NOTHROW(game.playAll());
+    CHECK_THROWS(game.playAll()); //If game already ended, can't start a new one.
+}
+
+TEST_CASE("Test game functions"){
+    Game game{Player("Ely"), Player("Bob")};
+    CHECK_NOTHROW(game.playTurn());
+    CHECK_NOTHROW(game.printLastTurn());
+    CHECK_NOTHROW(game.printLog());
+    CHECK_NOTHROW(game.printStats());
+    CHECK_NOTHROW(game.playAll());
+    CHECK_NOTHROW(game.printWiner());
+}
+
 

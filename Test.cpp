@@ -35,6 +35,9 @@ TEST_CASE("Game initialization failures"){ //Throw string exceptions according t
     CHECK_THROWS_AS(Game(Player(""), Player("Ely")), std::invalid_argument);
     CHECK_THROWS_AS(Game(Player("Ely"), Player("")), std::invalid_argument);
     CHECK_THROWS_AS(Game(Player("Ely"), Player("Ely")), std::invalid_argument);
+
+    Player player("Ely");
+    CHECK_THROWS_AS(Game(player, player), std::invalid_argument);
 }
 
 TEST_CASE("Check no stats yet (stats, log, last turn, winner)"){ //Throw string exception when we call print functions before playing the game.

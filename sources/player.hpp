@@ -20,8 +20,8 @@ class Player {
 public:
     Player(string name); //Constructor
 
-    int stacksize(); //Returns cardsLeft - deckTop index.
-    int cardesTaken(); //Retuns cardsTaken field.
+    int stacksize();
+    int cardesTaken();
     string getName();
 };
 

@@ -6,10 +6,7 @@
 
 #include "player.hpp"
 
-Player::Player(string name){
-    //this->name = name;
-
-}
+Player::Player(string name){}
 
 int Player::stacksize() {
     return -1;
